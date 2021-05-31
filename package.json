@@ -1,10 +1,10 @@
 {
-  "name": "@codemirror/lang-EXAMPLE",
+  "name": "lang-fiz",
   "version": "0.1.0",
-  "description": "EXAMPLE language support for CodeMirror",
+  "description": "fiz language support for CodeMirror",
   "scripts": {
-    "test": "mocha test/test.js",
-    "prepare": "rollup -c"
+    "test": "cm-runtests",
+    "prepare": "cm-buildhelper src/index.ts"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -16,17 +16,13 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/highlight": "^0.17.0",
-    "@codemirror/language": "^0.17.0",
-    "lezer": "^0.13.0"
+    "@codemirror/highlight": "^0.18.4",
+    "@codemirror/language": "^0.18.1",
+    "lezer-fiz": "github:anthologen/lezer-fiz#dev"
   },
   "devDependencies": {
-    "@wessberg/rollup-plugin-ts": "^1.3.8",
-    "lezer-generator": "^0.13.0",
-    "mocha": "^7.1.1",
-    "rollup": "^2.35.1",
-    "rollup-plugin-dts": "^2.0.1",
-    "typescript": "^4.1.3"
+    "@codemirror/buildhelper": "^0.1.7",
+    "lezer": "^0.13.5"
   },
   "license": "MIT"
 }

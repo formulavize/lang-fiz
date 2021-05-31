@@ -1,30 +1,32 @@
-import {parser} from "./syntax.grammar"
+import {parser} from "lezer-fiz"
 import {LezerLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
 import {styleTags, tags as t} from "@codemirror/highlight"
 
-export const EXAMPLELanguage = LezerLanguage.define({
+export const fizLanguage = LezerLanguage.define({
   parser: parser.configure({
     props: [
       indentNodeProp.add({
-        Application: delimitedIndent({closing: ")", align: false})
+        ArgList: delimitedIndent({closing: ")", align: false})
       }),
       foldNodeProp.add({
-        Application: foldInside
+        ArgList: foldInside
       }),
       styleTags({
-        Identifier: t.variableName,
-        Boolean: t.bool,
-        String: t.string,
+        Variable: t.variableName,
+        Call: t.function(t.variableName),
         LineComment: t.lineComment,
-        "( )": t.paren
+        BlockComment: t.blockComment,
+        "( )": t.paren,
+        ", ;": t.separator,
       })
     ]
   }),
   languageData: {
-    commentTokens: {line: ";"}
+    closeBrackets: {brackets: ["("]},
+    commentTokens: {line: "//", block: {open: "/*", close: "*/"}},
   }
 })
 
-export function EXAMPLE() {
-  return new LanguageSupport(EXAMPLELanguage)
+export function fiz() {
+  return new LanguageSupport(fizLanguage)
 }
