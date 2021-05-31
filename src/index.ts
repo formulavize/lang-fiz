@@ -9,7 +9,8 @@ export const fizLanguage = LezerLanguage.define({
         ArgList: delimitedIndent({closing: ")", align: false})
       }),
       foldNodeProp.add({
-        ArgList: foldInside
+        ArgList: foldInside,
+        BlockComment(tree) { return {from: tree.from + 2, to: tree.to - 2} }
       }),
       styleTags({
         Variable: t.variableName,
