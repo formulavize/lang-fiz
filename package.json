@@ -16,13 +16,14 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/highlight": "^0.18.4",
-    "@codemirror/language": "^0.18.1",
+    "@codemirror/highlight": "^0.19.6",
+    "@codemirror/language": "^0.19.7",
     "lezer-fiz": "github:anthologen/lezer-fiz#dev"
   },
   "devDependencies": {
-    "@codemirror/buildhelper": "^0.1.7",
-    "lezer": "^0.13.5"
+    "@codemirror/buildhelper": "^0.1.11",
+    "@codemirror/state": "^0.19.6",
+    "@lezer/common": "^0.15.11"
   },
   "license": "MIT"
 }

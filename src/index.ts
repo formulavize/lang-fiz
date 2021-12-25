@@ -1,8 +1,8 @@
 import {parser} from "lezer-fiz"
-import {LezerLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
+import {LRLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
 import {styleTags, tags as t} from "@codemirror/highlight"
 
-export const fizLanguage = LezerLanguage.define({
+export const fizLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
       indentNodeProp.add({
