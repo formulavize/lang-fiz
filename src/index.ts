@@ -1,6 +1,8 @@
-import {parser} from "lezer-fiz"
-import {LRLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
-import {styleTags, tags as t} from "@codemirror/highlight"
+import { parser } from "lezer-fiz"
+import {
+  LanguageSupport, LRLanguage, delimitedIndent,
+  foldInside, foldNodeProp, indentNodeProp
+} from "@codemirror/language"
 
 export const fizLanguage = LRLanguage.define({
   parser: parser.configure({
@@ -11,14 +13,6 @@ export const fizLanguage = LRLanguage.define({
       foldNodeProp.add({
         ArgList: foldInside,
         BlockComment(tree) { return {from: tree.from + 2, to: tree.to - 2} }
-      }),
-      styleTags({
-        Variable: t.variableName,
-        Call: t.function(t.variableName),
-        LineComment: t.lineComment,
-        BlockComment: t.blockComment,
-        "( )": t.paren,
-        ", ;": t.separator,
       })
     ]
   }),

@@ -16,7 +16,6 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/highlight": "^0.19.8",
     "@codemirror/language": "^6.0.0",
     "lezer-fiz": "github:anthologen/lezer-fiz#dev"
   },
