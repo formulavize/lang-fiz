@@ -30,4 +30,12 @@ one(
   )
 )
 `))
+
+  it("indents style arg lists", check(`
+f(){
+  a: 1,
+  b: 2
+}
+`))
+
 })

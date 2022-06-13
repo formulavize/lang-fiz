@@ -8,16 +8,18 @@ export const fizLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
       indentNodeProp.add({
-        ArgList: delimitedIndent({closing: ")", align: false})
+        ArgList: delimitedIndent({closing: ")", align: false}),
+        StyleArgList: delimitedIndent({closing: "}", align: false})
       }),
       foldNodeProp.add({
         ArgList: foldInside,
+        StyleArgList: foldInside,
         BlockComment(tree) { return {from: tree.from + 2, to: tree.to - 2} }
       })
     ]
   }),
   languageData: {
-    closeBrackets: {brackets: ["("]},
+    closeBrackets: {brackets: ["(", "{", "'", '"']},
     commentTokens: {line: "//", block: {open: "/*", close: "*/"}},
   }
 })
