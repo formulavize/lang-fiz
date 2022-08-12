@@ -1,30 +1,29 @@
-import {parser} from "./syntax.grammar"
-import {LezerLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
-import {styleTags, tags as t} from "@codemirror/highlight"
+import { parser } from "lezer-fiz"
+import {
+  LanguageSupport, LRLanguage, delimitedIndent,
+  foldInside, foldNodeProp, indentNodeProp
+} from "@codemirror/language"
 
-export const EXAMPLELanguage = LezerLanguage.define({
+export const fizLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
       indentNodeProp.add({
-        Application: delimitedIndent({closing: ")", align: false})
+        ArgList: delimitedIndent({closing: ")", align: false}),
+        StyleArgList: delimitedIndent({closing: "}", align: false})
       }),
       foldNodeProp.add({
-        Application: foldInside
-      }),
-      styleTags({
-        Identifier: t.variableName,
-        Boolean: t.bool,
-        String: t.string,
-        LineComment: t.lineComment,
-        "( )": t.paren
+        ArgList: foldInside,
+        StyleArgList: foldInside,
+        BlockComment(tree) { return {from: tree.from + 2, to: tree.to - 2} }
       })
     ]
   }),
   languageData: {
-    commentTokens: {line: ";"}
+    closeBrackets: {brackets: ["(", "{", "'", '"']},
+    commentTokens: {line: "//", block: {open: "/*", close: "*/"}},
   }
 })
 
-export function EXAMPLE() {
-  return new LanguageSupport(EXAMPLELanguage)
+export function fiz() {
+  return new LanguageSupport(fizLanguage)
 }
