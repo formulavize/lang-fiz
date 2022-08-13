@@ -24,5 +24,11 @@
     "@codemirror/state": "^6.0.0",
     "@lezer/common": "^1.0.0"
   },
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formulavize/lang-fiz.git"
+  },
+  "author": "anthologen",
+  "license": "MIT",
+  "homepage": "https://github.com/formulavize/lang-fiz#readme"
 }
