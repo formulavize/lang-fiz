@@ -1,4 +1,4 @@
-import { parser } from "lezer-fiz"
+import { parser } from "@formulavize/lezer-fiz"
 import {
   LanguageSupport, LRLanguage, delimitedIndent,
   foldInside, foldNodeProp, indentNodeProp

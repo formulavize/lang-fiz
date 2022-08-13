@@ -17,7 +17,7 @@
   "sideEffects": false,
   "dependencies": {
     "@codemirror/language": "^6.0.0",
-    "lezer-fiz": "github:anthologen/lezer-fiz#dev"
+    "@formulavize/lezer-fiz": "^0.1.0"
   },
   "devDependencies": {
     "@codemirror/buildhelper": "^0.1.16",
