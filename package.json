@@ -16,13 +16,13 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/language": "^6.2.1",
+    "@codemirror/language": "^6.10.1",
     "@formulavize/lezer-fiz": "^0.1.2"
   },
   "devDependencies": {
-    "@codemirror/buildhelper": "^0.1.16",
-    "@codemirror/state": "^6.1.2",
-    "@lezer/common": "^1.0.1"
+    "@codemirror/buildhelper": "^1.0.1",
+    "@codemirror/state": "^6.4.1",
+    "@lezer/common": "^1.2.1"
   },
   "repository": {
     "type": "git",
