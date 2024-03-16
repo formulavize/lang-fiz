@@ -4,7 +4,8 @@
   "description": "fiz language support for CodeMirror",
   "scripts": {
     "test": "cm-runtests",
-    "prepare": "cm-buildhelper src/index.ts"
+    "prepare": "cm-buildhelper src/index.ts",
+    "format": "prettier --write ."
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -22,7 +23,8 @@
   "devDependencies": {
     "@codemirror/buildhelper": "^1.0.1",
     "@codemirror/state": "^6.4.1",
-    "@lezer/common": "^1.2.1"
+    "@lezer/common": "^1.2.1",
+    "prettier": "^3.2.5"
   },
   "repository": {
     "type": "git",
