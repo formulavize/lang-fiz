@@ -20,7 +20,7 @@
   "sideEffects": false,
   "dependencies": {
     "@codemirror/language": "^6.10.1",
-    "@formulavize/lezer-fiz": "^0.1.2"
+    "@formulavize/lezer-fiz": "^0.2.0"
   },
   "devDependencies": {
     "@codemirror/buildhelper": "^1.0.1",
