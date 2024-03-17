@@ -8,7 +8,7 @@ function getState(doc: string): EditorState {
   return EditorState.create({ doc, extensions: [fizLanguage] });
 }
 
-function getTree(state: EditorState): Tree{
+function getTree(state: EditorState): Tree {
   return ensureSyntaxTree(state, state.doc.length, 1e9)!;
 }
 
@@ -19,7 +19,7 @@ describe("fiz syntax queries", () => {
     ist(tree instanceof Tree);
     ist(tree.type.name, "Recipe");
     ist(tree.length, state.doc.length);
-    
+
     const def = tree.resolve(2);
     ist(def.name, "Assignment");
     ist(def.from, 0);
