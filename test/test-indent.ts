@@ -6,10 +6,11 @@ import { fizLanguage } from "../dist/index.js";
 function check(code: string) {
   return () => {
     code = /^\n*([^]*)/.exec(code)![1];
-    let state = EditorState.create({ doc: code, extensions: [fizLanguage] });
-    for (let pos = 0, lines = code.split("\n"), i = 0; i < lines.length; i++) {
-      let line = lines[i],
-        indent = /^\s*/.exec(line)![0].length;
+    const state = EditorState.create({ doc: code, extensions: [fizLanguage] });
+    const lines = code.split("\n");
+    for (let pos = 0, i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const indent = /^\s*/.exec(line)![0].length;
       ist(`${getIndentation(state, pos)} (${i + 1})`, `${indent} (${i + 1})`);
       pos += line.length + 1;
     }

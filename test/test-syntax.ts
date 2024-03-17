@@ -4,31 +4,35 @@ import { fizLanguage } from "../dist/index.js";
 import { ensureSyntaxTree } from "@codemirror/language";
 import { Tree } from "@lezer/common";
 
-function s(doc: string) {
+function getState(doc: string): EditorState {
   return EditorState.create({ doc, extensions: [fizLanguage] });
 }
 
-function tr(state: EditorState) {
+function getTree(state: EditorState): Tree {
   return ensureSyntaxTree(state, state.doc.length, 1e9)!;
 }
 
 describe("fiz syntax queries", () => {
   it("returns a tree", () => {
-    let state = s("x = y()"),
-      tree = tr(state);
+    const state = getState("x = y()");
+    const tree = getTree(state);
     ist(tree instanceof Tree);
     ist(tree.type.name, "Recipe");
     ist(tree.length, state.doc.length);
-    let def = tree.resolve(2);
+
+    const def = tree.resolve(2);
     ist(def.name, "Assignment");
     ist(def.from, 0);
     ist(def.to, 7);
   });
 
   it("keeps the tree up to date through changes", () => {
-    let state = s("f");
-    ist(tr(state).topNode.childAfter(0)!.name, "Alias");
-    state = state.update({ changes: { from: 1, insert: "()" } }).state;
-    ist(tr(state).topNode.childAfter(0)!.name, "Call");
+    let state = getState("f");
+    const firstNodeName = getTree(state).topNode.childAfter(0)!.name;
+    ist(firstNodeName, "Call");
+
+    state = state.update({ changes: { from: 1, insert: "=" } }).state;
+    const newFirstNodeName = getTree(state).topNode.childAfter(0)!.name;
+    ist(newFirstNodeName, "Alias");
   });
 });
