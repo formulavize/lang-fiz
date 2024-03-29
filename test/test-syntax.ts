@@ -27,9 +27,9 @@ describe("fiz syntax queries", () => {
   });
 
   it("keeps the tree up to date through changes", () => {
-    let state = getState("f");
+    let state = getState("x");
     const firstNodeName = getTree(state).topNode.childAfter(0)!.name;
-    ist(firstNodeName, "Call");
+    ist(firstNodeName, "RhsVariable");
 
     state = state.update({ changes: { from: 1, insert: "=" } }).state;
     const newFirstNodeName = getTree(state).topNode.childAfter(0)!.name;
