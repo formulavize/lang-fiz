@@ -14,10 +14,12 @@ export const fizLanguage = LRLanguage.define({
       indentNodeProp.add({
         ArgList: delimitedIndent({ closing: ")", align: false }),
         StyleArgList: delimitedIndent({ closing: "}", align: false }),
+        StatementList: delimitedIndent({ closing: "]", align: false }),
       }),
       foldNodeProp.add({
         ArgList: foldInside,
         StyleArgList: foldInside,
+        StatementList: foldInside,
         BlockComment(tree) {
           return { from: tree.from + 2, to: tree.to - 2 };
         },
@@ -25,7 +27,7 @@ export const fizLanguage = LRLanguage.define({
     ],
   }),
   languageData: {
-    closeBrackets: { brackets: ["(", "{", "'", '"'] },
+    closeBrackets: { brackets: ["(", "{", "[", "'", '"'] },
     commentTokens: { line: "//", block: { open: "/*", close: "*/" } },
   },
 });
