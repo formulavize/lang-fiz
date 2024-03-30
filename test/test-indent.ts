@@ -48,4 +48,16 @@ f(){
 }
 `),
   );
+
+  it(
+    "indents statement lists",
+    check(`
+[
+  a()
+  [
+    b
+    c
+  ]
+]`),
+  );
 });
