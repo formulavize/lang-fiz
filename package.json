@@ -1,6 +1,6 @@
 {
   "name": "@formulavize/lang-fiz",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "fiz language support for CodeMirror",
   "scripts": {
     "build": "cm-buildhelper src/index.ts",
