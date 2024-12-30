@@ -19,16 +19,19 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/language": "^6.10.3",
-    "@formulavize/lezer-fiz": "^0.3.1"
+    "@codemirror/language": "^6.10.8",
+    "@formulavize/lezer-fiz": "^0.3.2"
   },
   "devDependencies": {
     "@codemirror/buildhelper": "^1.0.2",
-    "@codemirror/state": "^6.4.1",
+    "@codemirror/state": "^6.5.0",
     "@lezer/common": "^1.2.3",
+    "@types/mocha": "^10.0.10",
     "chokidar-cli": "^3.0.0",
+    "ist": "^1.1.7",
+    "mocha": "^11.0.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.3"
+    "prettier": "^3.4.2"
   },
   "engines": {
     "node": ">=20",
