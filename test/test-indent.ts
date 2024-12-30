@@ -1,4 +1,5 @@
 import ist from "ist";
+import { describe, it } from "mocha";
 import { EditorState } from "@codemirror/state";
 import { getIndentation } from "@codemirror/language";
 import { fizLanguage } from "../dist/index.js";
