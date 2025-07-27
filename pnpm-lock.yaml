@@ -12,8 +12,8 @@ importers:
         specifier: ^6.11.2
         version: 6.11.2
       '@formulavize/lezer-fiz':
-        specifier: ^0.3.3
-        version: 0.3.3
+        specifier: ^1.0.0
+        version: 1.0.0
     devDependencies:
       '@codemirror/buildhelper':
         specifier: ^1.0.2
@@ -69,8 +69,8 @@ packages:
   '@codemirror/view@6.38.1':
     resolution: {integrity: sha512-RmTOkE7hRU3OVREqFVITWHz6ocgBjv08GoePscAakgVQfciA3SGCEk7mb9IzwW61cKKmlTpHXG6DUE5Ubx+MGQ==}
 
-  '@formulavize/lezer-fiz@0.3.3':
-    resolution: {integrity: sha512-5F+1a7clA4MGR8t4SbP3KQdnWOJSL/VCAN8DTRiZBauvfZG90MMLdsU2JF6DA2fPHx7+uN7IGpUl0lNoD4ehvQ==}
+  '@formulavize/lezer-fiz@1.0.0':
+    resolution: {integrity: sha512-9AiAvbusGOrNd+e0zwf+zLcteR2UDBYE13FVPkX5cG/8jLxMY164cbtdLvICdwH0K85S7VOejkLzLxJZBr3nhw==}
     engines: {node: '>=20', pnpm: '>=9'}
 
   '@jridgewell/sourcemap-codec@1.5.4':
@@ -1325,7 +1325,7 @@ snapshots:
       style-mod: 4.1.2
       w3c-keyname: 2.2.8
 
-  '@formulavize/lezer-fiz@0.3.3':
+  '@formulavize/lezer-fiz@1.0.0':
     dependencies:
       '@lezer/highlight': 1.2.1
       '@lezer/lr': 1.4.2

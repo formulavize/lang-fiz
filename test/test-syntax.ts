@@ -34,6 +34,6 @@ describe("fiz syntax queries", () => {
 
     state = state.update({ changes: { from: 1, insert: "=" } }).state;
     const newFirstNodeName = getTree(state).topNode.childAfter(0)!.name;
-    ist(newFirstNodeName, "Alias");
+    ist(newFirstNodeName, "Assignment");
   });
 });
