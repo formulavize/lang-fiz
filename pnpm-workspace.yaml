@@ -1,2 +1,4 @@
+allowBuilds:
+  '@formulavize/lezer-fiz': true
 minimumReleaseAgeExclude:
   - '@formulavize/lezer-fiz'
