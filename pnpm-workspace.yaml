@@ -1,0 +1,2 @@
+minimumReleaseAgeExclude:
+  - '@formulavize/lezer-fiz'
