@@ -1,6 +1,6 @@
 {
   "name": "@formulavize/lang-fiz",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "fiz language support for CodeMirror",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -21,7 +21,7 @@
   "sideEffects": false,
   "dependencies": {
     "@codemirror/language": "^6.12.4",
-    "@formulavize/lezer-fiz": "^2.1.1"
+    "@formulavize/lezer-fiz": "^2.2.0"
   },
   "devDependencies": {
     "@codemirror/buildhelper": "^1.0.2",
