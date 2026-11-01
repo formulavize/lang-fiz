@@ -1,6 +1,6 @@
 {
   "name": "@formulavize/lang-fiz",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "fiz language support for CodeMirror",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
