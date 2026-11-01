@@ -5,7 +5,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "cm-buildhelper src/index.ts",
-    "test": "cm-runtests",
+    "test": "mocha test/test-*.js",
     "format": "prettier --write .",
     "dev:watch": "chokidar '{src,test}/**/*.ts' -c 'pnpm run all'",
     "all": "run-s build test"
