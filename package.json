@@ -32,7 +32,7 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "@formulavize/lezer-fiz": "^2.3.2"
+    "@formulavize/lezer-fiz": "^2.3.3"
   },
   "peerDependencies": {
     "@codemirror/language": "^6.0.0"
