@@ -1,6 +1,6 @@
 {
   "name": "@formulavize/lang-fiz",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "fiz language support for CodeMirror",
   "scripts": {
     "prepack": "run-s build test",
